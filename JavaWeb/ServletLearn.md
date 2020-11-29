@@ -45,7 +45,7 @@ servletContext.getContextPath();
 //获取当前工程物理上的绝对路径
 servletContext.getRealPath("/");
 ```
-
+***
 ```html
 <body>
     <form action="http://localhost:8080/01_web/hello" method="get">
@@ -53,7 +53,7 @@ servletContext.getRealPath("/");
     </form>
 </body>
 ```
-
+***
 ```xml
 <!-- servlet标签给Tomcat服务器配置Servlet程序 -->
 <servlet>
