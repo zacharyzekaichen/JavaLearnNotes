@@ -91,6 +91,25 @@ response.setHeader("Location", "http://localhost:8080");
 //第二种方法（推荐使用）
 response.sendRedirect("http://localhost:8080")；
 ```
+**ServletContext类对象的域数据**
+```java
+//对于Servlet1而言
+ServletContext servletContext = getServletContext();
+servletContext.setAttribute(key:"username", value:"czk");
+String v1 = servletContext.getAttribute("username"); //"czk"
+//对于Servlet2而言
+ServletContext servletContext = getServletContext();
+String v2 = servletContext.getAttribute("username"); //"czk"
+```
+**HttpServletRequest类对象的域数据**
+*由实验结果可得，只有在一次请求之中，request中的域参数才是共享的，否则不共享。*
+```java
+//对于Servlet1而言
+request.setAttribute("username", "czk");
+String v1 = request.getAttribute("username"); //"czk"
+//对于Servlet2而言
+request.getAttribute("username"); //null
+```
 ***
 ```html
 <head>
